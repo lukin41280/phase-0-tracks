@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Golf Form</title>
+</head>
+<body>
+   <h1>Submit For Your Tee Time</h1>
+   <form action="success.html" method="post">
+   <fieldset>
+   <div>
+      <label>Name:</label>
+      <input type="text" name="fullName">
+    </div>
+    <div> 
+      <label>Age:</label>
+      <select name="age">
+         <option value="ageRange">18-25</option>
+         <option value="ageRange">26-35</option>
+         <option value="ageRange">36-50</option>
+         <option value="ageRange">50+</option>
+      </select>
+   </div>
+   <div>
+      <input type="radio" name="gender" value="male">
+      Male
+      <input type="radio" name="gender" value="female">
+      Female
+   </div>
+   <div>
+      <label>Email Address:</label>
+      <input type="email" name="emailAddr">
+   </div>
+   </fieldset>
+   <fieldset>
+   <div>
+      <label>What Day Would You Like To Play?</label>
+      <input type="text" name="chooseDate" placeholder="mm/dd/yyyy">
+   </div>
+   <div>
+   	  <label>How Many In Your Group?</label>
+      <input type="number" name="quantity" min="1" max="4">
+   </div>
+   <div>
+      <label>Please List Any Special Requests Below:</label>
+      <br>
+      <textarea name=commentSection rows="4" cols="50"></textarea>
+   </div>
+   <div>
+      <input type="checkbox" name="cb-agree" value="agree">
+      By clicking this box, you agree that all information is correct
+   </div>
+   </fieldset>
+      <button type="submit">Click Here To Submit</button>
+   </form>
+</body>
+</html>
