@@ -1,0 +1,15 @@
+div {
+	margin-left: 40%;
+	margin-right:50%;
+	margin-top: 50px;
+}
+#hat {
+    position: relative;
+	top: 100px;
+	right: 20px;
+}
+#glasses {
+	position: relative;
+	bottom: 192px;
+	left: 44px;
+}
