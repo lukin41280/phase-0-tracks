@@ -1,3 +1,5 @@
+
+
 body{
   width: 960px;
 }
@@ -30,7 +32,7 @@ main {
 }
 
 /* you're welcome to edit the
-image, figure, and figcaption CSS if you'd like, 
+image, figure, and figcaption CSS if you'd like,
 but it's optional! */
 img {
   width: 100%;
@@ -44,4 +46,22 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+@media screen and (max-width: 968px) {
+
+img {
+  width: 50%;
+}
+
+main {
+  width: 100%;
+}
+
+}
+
+@media screen and (max-width: 500px) {
+  section, main {
+      font-family: cursive;
+  }
 }
