@@ -1,0 +1,31 @@
+Robot Elevator
+
+1) Resting period. 
+2) When doors open, SCAN elevator room for humanoids:  
+      -If no humanoids enter:
+         RETURN to resting period
+      -If humanoid enters: 
+         SCAN face and SAVE image
+3) For each humanoid scanned and saved, until all marked COMPLETE:
+      -Until a valid response is received or a max of 3 attempts made:
+           DISPLAY saved face scan on video display 
+           PROMPT for desired floor
+           WAIT 3 seconds for response
+         -If valid response given:
+            CHECK panel to see if floor button has already been pressed
+               -If button has been pressed:
+                  PROMPT humanoid that floor has been already selected
+                  MARK saved face scan COMPLETE
+               -If button has not been pressed:
+                  SELECT corresponding floor number button on panel
+                  MARK saved face scan COMPLETE
+         -If no valid response received:
+           PROMPT humanoid to enter floor manually
+           MARK saved face scan COMPLETE
+4) RETURN to resting period.
+
+
+
+
+           
+
