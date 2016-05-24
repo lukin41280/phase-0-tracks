@@ -28,6 +28,29 @@ Robot Elevator
 5) RETURN to resting period.
 
 
+BEARD TRIMMING
+
+1) ATTACH #3 trimmer setting to trimmer
+2) Until trimmer runs properly:
+      SWITCH trimmer on  
+         -If trimmer runs slowly or not at all:
+            SWITCH trimmer off           
+            REPLACE batteries
+         -If trimmer runs fast:
+            Trimmer runs properly
+3) Until all 1”x1” beard sections are trimmed:
+      FIND untrimmed section
+         -If no untrimmed section is found:
+            All 1”x1” beard sections are trimmed
+
+         
+MOVE trimmer to untrimmed section of beard
+      -If hair has not been trimmed:
+         PLACE razor side of trimmer to beard hair
+         MOVE trimmer up and down in a half
+
+
+
 
 
            
