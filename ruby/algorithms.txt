@@ -38,16 +38,17 @@ BEARD TRIMMING
             REPLACE batteries
          -If trimmer runs fast:
             Trimmer runs properly
-3) Until all 1”x1” beard sections are trimmed:
-      FIND untrimmed section
-         -If no untrimmed section is found:
-            All 1”x1” beard sections are trimmed
-
-         
-MOVE trimmer to untrimmed section of beard
-      -If hair has not been trimmed:
-         PLACE razor side of trimmer to beard hair
-         MOVE trimmer up and down in a half
+3) Until 14 1”x1” beard sections trimmed:
+      MOVE trimmer to section of beard
+         -If hair has been trimmed:
+            CONTINUE onward
+         -If hair has not been trimmed:  
+            PLACE razor side of trimmer to beard hair
+            MOVE trimmer around section until trimmed
+            ADD 1 to 1”x1” beard sections trimmed
+4) SWITCH trimmer off
+5) DETACH #3 trimmer setting from trimmer
+6) CLEAN beard trimmings from sink
 
 
 
