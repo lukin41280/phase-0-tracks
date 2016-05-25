@@ -1,6 +1,7 @@
 header{
  position: absolute;
- width:100%;
+ 
+
  background-color: beige;
  border-radius:15%;
  
@@ -9,6 +10,7 @@ body{
   font-family:helvetica;
   column-count:2;
   position: relative;
+  width: 100%;
   background-image: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-34.jpg");
 }
 .column-1{
