@@ -1,3 +1,33 @@
-* {
-	background-color: red;
+header{
+ position: absolute;
+ width:100%;
+ background-color: beige;
+ border-radius:15%;
+ 
+}
+body{
+  font-family:helvetica;
+  column-count:2;
+  position: relative;
+  background-image: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-34.jpg");
+}
+.column-1{
+  background-color:
+  column-count: 1;
+  margin-top:130px;
+  width:100%;
+  display: inline-block;
+}
+.column-2{
+  column-count: 1;
+   margin-top:130px;
+  width:100%;
+  display: inline-block;
+}
+
+footer{
+  background-color:beige;
+  position: absolute;
+  max-width: 100%;
+  margin-top:-1100px;
 }
