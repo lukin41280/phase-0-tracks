@@ -14,16 +14,16 @@ puts "Do you wish to enroll in life insurance? y or n"
 
 monsterLife = gets.chomp
 
-vampChecker = "Results inconclusive"
+vampChecker = nil
 
-if (monsterAge < 125) && (monsterGarlic == "y")
+if (monsterAge < 125) && (monsterGarlic != "n")
    vampChecker = "Probably not a vampire"
-end
-if (monsterAge > 125) && ((monsterGarlic == "n") || (monsterLife == "n"))
+elsif (monsterAge > 125) && ((monsterGarlic == "n") || (monsterLife == "n"))
 	vampChecker = "Probably a vampire"
-end
-if (monsterName == "Drake Cula") || (monsterName == "Tu Fang")
+elsif (monsterName == "Drake Cula") || (monsterName == "Tu Fang")
 	vampChecker = "Definately a vampire"
+else
+	vampChecker = "Results inconclusive"
 end
 
  puts vampChecker 
