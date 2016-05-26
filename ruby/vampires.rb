@@ -1,29 +1,39 @@
-puts "What is your name?"
+puts "How many employees?"
 
-monsterName = gets.chomp
+monsterAmount = gets.chomp.to_i
+counter = 1
 
-puts "How old are you?"
+while counter <= monsterAmount
 
-monsterAge = gets.chomp.to_i
+   puts "What is your name?"
 
-puts "Shall we order you some garlic? y or n"
+   monsterName = gets.chomp
 
-monsterGarlic = gets.chomp
+   puts "How old are you?"
 
-puts "Do you wish to enroll in life insurance? y or n"
+   monsterAge = gets.chomp.to_i
 
-monsterLife = gets.chomp
+   puts "Shall we order you some garlic? y or n"
 
-vampChecker = nil
+   monsterGarlic = gets.chomp
 
-if (monsterAge < 125) && (monsterGarlic != "n")
-   vampChecker = "Probably not a vampire"
-elsif (monsterAge > 125) && ((monsterGarlic == "n") || (monsterLife == "n"))
-	vampChecker = "Probably a vampire"
-elsif (monsterName == "Drake Cula") || (monsterName == "Tu Fang")
-	vampChecker = "Definately a vampire"
-else
-	vampChecker = "Results inconclusive"
+   puts "Do you wish to enroll in life insurance? y or n"
+
+   monsterLife = gets.chomp
+
+   vampChecker = nil
+
+   if (monsterName == "Drake Cula") || (monsterName == "Tu Fang")
+	  vampChecker = "Definately a vampire"
+   elsif (monsterAge < 125) && (monsterGarlic != "n")
+      vampChecker = "Probably not a vampire"
+   elsif (monsterAge > 125) && ((monsterGarlic == "n") || (monsterLife == "n"))
+	  vampChecker = "Probably a vampire" 
+   else
+	  vampChecker = "Results inconclusive"
+   end
+
+   puts "Employee #{monsterName} result: #{vampChecker}"
+
+   counter = counter +1 
 end
-
- puts vampChecker 
