@@ -21,13 +21,21 @@ while counter <= monsterAmount
 
    monsterLife = gets.chomp
 
+   monsterAllergies = nil
+   until monsterAllergies == "sunshine" || monsterAllergies == "done"
+      puts "Please enter an allergy.  type 'done' when finished"
+      monsterAllergies = gets.chomp
+   end
+   
    vampChecker = nil
-
-   if (monsterName == "Drake Cula") || (monsterName == "Tu Fang")
+   
+   if monsterAllergies != "done"
+      vampChecker = "Probably a vampire"
+   elsif monsterName == "Drake Cula" || monsterName == "Tu Fang"
 	  vampChecker = "Definately a vampire"
-   elsif (monsterAge < 125) && (monsterGarlic != "n")
+   elsif monsterAge < 125 && monsterGarlic != "n"
       vampChecker = "Probably not a vampire"
-   elsif (monsterAge > 125) && ((monsterGarlic == "n") || (monsterLife == "n"))
+   elsif monsterAge > 125 && (monsterGarlic == "n" || monsterLife == "n")
 	  vampChecker = "Probably a vampire" 
    else
 	  vampChecker = "Results inconclusive"
