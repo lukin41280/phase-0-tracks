@@ -13,6 +13,18 @@ while counter <= monsterAmount
 
    monsterAge = gets.chomp.to_i
 
+   puts "What year were you born?"
+
+   monsterYear = gets.chomp.to_i
+
+   currYear = 2016
+
+   if currYear - monsterYear != monsterAge
+      ageChecker = false
+   else
+      ageChecker = true
+   end
+
    puts "Shall we order you some garlic? y or n"
 
    monsterGarlic = gets.chomp
@@ -33,9 +45,9 @@ while counter <= monsterAmount
       vampChecker = "Probably a vampire"
    elsif monsterName == "Drake Cula" || monsterName == "Tu Fang"
 	  vampChecker = "Definately a vampire"
-   elsif monsterAge < 125 && monsterGarlic != "n"
+   elsif ageChecker == true && monsterGarlic != "n"
       vampChecker = "Probably not a vampire"
-   elsif monsterAge > 125 && (monsterGarlic == "n" || monsterLife == "n")
+   elsif ageChecker == false && (monsterGarlic == "n" || monsterLife == "n")
 	  vampChecker = "Probably a vampire" 
    else
 	  vampChecker = "Results inconclusive"
