@@ -22,10 +22,14 @@
 " suspects".prepend("The usual")
 # => "the usual suspects"
 
-# "The case of the disappearing last letter".<???>
+"The case of the disappearing last letter".chop
+     #or
+"The case of the disappearing last letter"[0...-1]
 # => "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
+"The mystery of the missing first letter"[1..39]
+     #or
+"The mystery of the missing first letter".reverse.chop.reverse    
 # => "he mystery of the missing first letter"
 
 # "Elementary,    my   dear        Watson!".<???>
