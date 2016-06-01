@@ -38,6 +38,13 @@ else
 end
 
 # add responeses into empty hash
+client_data[:name] = nameClient
+client_data[:age] = ageClient
+client_data[:num_rooms] = roomsClient
+client_data[:fav_color] = colorClient
+client_data[:fav_decor] = decorClient
+client_data[:financing?] = financeClient
+client_data[:return_client?] = returningClient
 
 # print hash
 p client_data
