@@ -48,12 +48,33 @@ client_data[:return_client?] = returningClient
 
 # print hash
 p client_data
+
 # prompt for any updates to a key and convert to a symbol
+puts "Are there any changes that need to be made?  If no, type 'none'"
+updateChanges = gets.chomp
 
-# prompt for updated value to the key
+# if changes are to be made, prompt for updated value to the key.  If none is
+	# entered, do nothing.  For everything else, update hash with response 
+	# variables and print updated hash
+if updateChanges != "none"
+	puts "What category needs to change?"
+	keyToChange = gets.chomp.to_sym
+	puts "What is the new information for this category?"
+	if keyToChange == :num_rooms || keyToChange == :age
+		valueToChange = gets.chomp.to_i
+	elsif keyToChange == :financing? || keyToChange == :return_client?
+		valueToChange = gets.chomp.downcase
+		if valueToChange == "true"
+			valueToChange = true
+		else
+			valueToChange = false
+		end
+	else
+		valueToChange = gets.chomp
+	end
+	client_data[keyToChange] = valueToChange
+	p client_data
+end
 
-# use responses to update the hash, if "none" is entered, do not change
-	# anything 
 
-# print hash
 
