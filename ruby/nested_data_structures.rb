@@ -60,7 +60,24 @@ basketball_league = {
 }
 
 # print to screen the skills of a player from specific teams
+puts "The skills for Larry of the Blue Moose are:"
+p basketball_league[:blue_moose][:player1][:skills]
+
+puts "The second best skill for David of the Green Zebras is:"
+p basketball_league[:green_zebras][:player3][:skills][1]
 
 # print to screen the list of players on a specific team
+puts "The players on the Red Cows are:"
+p basketball_league[:red_cows]
+
+puts "The second player on the Blue Moose is:"
+p basketball_league[:blue_moose][:player2][:name]
 
 # a player has improved so add a new skill to their array
+# Charlie of the Green Zebras has gotten better at shooting.  Add skill and print
+basketball_league[:green_zebras][:player2][:skills].push("shooting")
+puts "Charlie's updated skills are:"
+p basketball_league[:green_zebras][:player2][:skills]
+
+
+
