@@ -8,7 +8,7 @@ def name_swap (name)
 end
 
 ### tester for name_swap
-p name_swap("Bob Vincent")
+	#p name_swap("Bob Vincent")
 
 
 ###change vowels to next letter in sequence and keep case specific.  
@@ -30,7 +30,7 @@ def next_vowel (char)
 end
 
 ### tester for next_vowel
- p next_vowel("U")
+	#p next_vowel("U")
 
 ### change consonants to next letter in sequence and keep case specific
 
@@ -51,6 +51,46 @@ def next_consonant (char)
 end
 
 ### tester for next_consonant
-p next_consonant("d")
-# incorporate all three methods into one method
+	#p next_consonant("d")
+
+### incorporate all three methods into one method
+def alias_name(name)
+	# run swap name to interchange first and last names and then run .chars
+		# to turn characters into an array
+	swapName = name_swap(name).chars
+	# set variables for vowels and consonants and run .chars to form array
+	allVowels = "aeiouAEIOU".chars
+	allConsonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ".chars
+	# loop through each character of the name
+		swapName.map do |char|
+			
+			#pos = swapName.index(char)
+			#puts "pos equals: #{pos}"
+			# check if each letter is a vowel or a consonant and then run 
+				# corresponding method to change character
+			if allVowels.include?(char) == true
+				newVowel = next_vowel(char)
+				#nameIndex = swapName.index(pos)
+				#p swapName
+				#p char
+				#p newVowel
+				#puts "name index is: #{nameIndex}"
+				#p swapName[nameIndex]
+				p newVowel
+		### try doing a while loop with a counter to specify the index when 
+		### doing newVowel instertion
+				
+				swapName[pos] = newVowel
+				
+			end
+			#pos =+ 1
+		end
+	# convert name character array into string
+	swapName.join('')
+end
+
+### tester for alias_name
+puts "Name entered is Pelletier Jason"
+puts "Should be: Pillitoir Jesun"
+p alias_name("Jason Pelletier")
 
