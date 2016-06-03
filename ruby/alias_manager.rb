@@ -1,16 +1,15 @@
 ### swap first and last name
 
-def name_swap (firstName, lastName)
-	newName = lastName + " " + firstName
+def name_swap (name)
+	# split name into a 2 index array and set new string variable to 
+		# swap the first and second index
+	splitName = name.split(' ')
+	newName = splitName[1] + " " + splitName[0]
 end
 
 ### tester for name_swap
-name = "Bob Vincent"
-splitName = name.split(' ')
-p splitName
+p name_swap("Bob Vincent")
 
-switchName = name_swap(splitName[0], splitName[1])
-p switchName
 
 ###change vowels to next letter in sequence and keep case specific.  
 
