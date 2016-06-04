@@ -12,7 +12,6 @@ end
 
 
 ###change vowels to next letter in sequence and keep case specific.  
-
 def next_vowel (char)
 	# name all vowels and turn into character arrays
 	allVowels = "aeiouAEIOU".chars
@@ -61,36 +60,25 @@ def alias_name(name)
 	# set variables for vowels and consonants and run .chars to form array
 	allVowels = "aeiouAEIOU".chars
 	allConsonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ".chars
-	# loop through each character of the name
+	# set a counter to use for the index and loop through each character of 
+	# the name
+		counter = 0
 		swapName.map do |char|
-			
-			#pos = swapName.index(char)
-			#puts "pos equals: #{pos}"
 			# check if each letter is a vowel or a consonant and then run 
-				# corresponding method to change character
+				# corresponding method to change character and insert into name
 			if allVowels.include?(char) == true
 				newVowel = next_vowel(char)
-				#nameIndex = swapName.index(pos)
-				#p swapName
-				#p char
-				#p newVowel
-				#puts "name index is: #{nameIndex}"
-				#p swapName[nameIndex]
-				p newVowel
-		### try doing a while loop with a counter to specify the index when 
-		### doing newVowel instertion
-				
-				swapName[pos] = newVowel
-				
+				swapName[counter] = newVowel
+			elsif allConsonants.include?(char) == true
+				newConsonant = next_consonant(char)
+				swapName[counter] = newConsonant	
 			end
-			#pos =+ 1
+			counter = counter + 1
 		end
 	# convert name character array into string
 	swapName.join('')
 end
 
 ### tester for alias_name
-puts "Name entered is Pelletier Jason"
-puts "Should be: Pillitoir Jesun"
-p alias_name("Jason Pelletier")
+	p alias_name("Felicia Torres")
 
