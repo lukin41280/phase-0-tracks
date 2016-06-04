@@ -80,5 +80,25 @@ def alias_name(name)
 end
 
 ### tester for alias_name
-	p alias_name("Felicia Torres")
+	#p alias_name("Felicia Torres")
+
+
+### provide user interface
+agentNames = {}
+nameEntry = ""
+until nameEntry == "done" 
+	puts "Please enter a name, or type #{"'done'"} if completed"
+	nameEntry = gets.chomp
+	#fakeName = alias_name(nameEntry)
+	#puts fakeName
+	agentNames.store(nameEntry, "value") 
+end
+
+### loop through stored names and print out both in a sentence 
+agentNames.each do | entered, fake |
+	if entered != "done"
+		puts "#{entered}'s code name is #{fake}"
+	end
+end
+
 
