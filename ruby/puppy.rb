@@ -4,8 +4,9 @@
 # CHARACTERISTICS ----------------
 # Name: varies
 # Color: varies
-# Eyes: large
-# Ears: fluffy
+# Eyes: 2
+# Ears: 2
+# Nose: 1
 # Hyper: yes
 # Friendly: yes
 
