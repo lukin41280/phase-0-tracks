@@ -1,5 +1,9 @@
 class Santa
 
+	### refactor getters(age, ethnicitiy) and setter(gender) ###
+	attr_reader :age, :ethnicity
+	attr_accessor :gender
+
 	def initialize (gender, ethnicity)
 		puts "Initializing Santa instance ..."
 		@gender = gender
@@ -34,18 +38,18 @@ class Santa
 	end
 	
 	### setter method for @gender ###
-	def gender=(gender_change)
-		@gender = gender_change
-	end
+	# def gender=(gender_change)
+	# 	@gender = gender_change
+	# end
 
 	### getter methods to access @age and @ethnicity
-	def age
-		@age
-	end
+	# def age
+	# 	@age
+	# end
 
-	def ethnicity
-		@ethnicity
-	end
+	# def ethnicity
+	# 	@ethnicity
+	# end
 
 end
 
@@ -57,8 +61,8 @@ Nick = Santa.new("male", "hobbit")
 #Nick.get_mad_at("Vixen")
 Nick.gender = "female"
 p Nick
-p Nick.age
-p Nick.ethnicity
+puts "Nick Santa's age is #{Nick.age}" 
+puts "Nick Santa's race is #{Nick.ethnicity}"
 
 ### Loop to add new Santas to an array ###
 santas = []
