@@ -20,6 +20,11 @@ class Puppy
   def high_five
   	5
   end
+
+  def initialize
+  	puts "Initializing new puppy instance ..."
+  end
+
 end
 
 Gizmo = Puppy.new
