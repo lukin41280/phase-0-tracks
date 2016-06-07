@@ -1,8 +1,10 @@
 class Santa
 
-	### refactor getters(age, ethnicitiy) and setter(gender) ###
-	attr_reader :age, :ethnicity
-	attr_accessor :gender
+	### refactor getters(age, ethnicity) and setter(gender) ###
+	# added age to accessor in order to change in santa_builder method
+	# and added reindeer_ranking to reader to be able to print
+	attr_reader :ethnicity, :reindeer_ranking
+	attr_accessor :gender, :age
 
 	def initialize (gender, ethnicity)
 		puts "Initializing Santa instance ..."
@@ -54,26 +56,48 @@ class Santa
 end
 
 ### Driver Tester ###
-Nick = Santa.new("male", "hobbit")
-#Nick.speak
-#Nick.eat_milk_and_cookies("Oreo")
-#p Nick.celebrate_birthday
-#Nick.get_mad_at("Vixen")
-Nick.gender = "female"
-p Nick
-puts "Nick Santa's age is #{Nick.age}" 
-puts "Nick Santa's race is #{Nick.ethnicity}"
+# Nick = Santa.new("male", "hobbit")
+# #Nick.speak
+# #Nick.eat_milk_and_cookies("Oreo")
+# #p Nick.celebrate_birthday
+# #Nick.get_mad_at("Vixen")
+# Nick.gender = "female"
+# p Nick
+# puts "Nick Santa's age is #{Nick.age}" 
+# puts "Nick Santa's race is #{Nick.ethnicity}"
 
 ### Loop to add new Santas to an array ###
-santas = []
+#santas = []
 
-genders = ["male", "female", "agender", "demigender", "gender fluid", "bigender"]
-races = ["hobbit", "orc", "human", "goblin", "dwarf", "elf"]
+#genders = ["male", "female", "agender", "demigender", "gender fluid", "bigender"]
+#races = ["hobbit", "orc", "human", "goblin", "dwarf", "elf"]
 
 # genders.length.times do |claus|
 # 	santas << Santa.new(genders[claus], races[claus])
 # 	puts "Number #{claus+1},"
 # 	puts "#{santas[claus].santa_type}"
 # end
+
+### Build Many Many Santas ###
+
+def santa_builder(santa_amount)
+	# make a counter to keep track of # of santas when printing
+	counter = 1
+	santa_amount.times do |santa|
+		# move sample arrays into method
+		genders = ["male", "female", "agender", "demigender", "gender fluid", "bigender"]
+		races = ["hobbit", "orc", "human", "goblin", "dwarf", "elf"]
+		# create a new Santa with random gender/race by using .sample
+		santa = Santa.new(genders.sample, races.sample)
+		# create a random age
+		santa.age = rand(140)
+		puts "Santa #{counter} is a(n) #{santa.gender} #{santa.ethnicity} who is #{santa.age} years old"
+		puts "The list of favorite reindeers is as follows:"
+		p santa.reindeer_ranking
+		counter += 1
+	end
+end
+
+santa_builder(100)
 
 
