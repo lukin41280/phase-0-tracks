@@ -4,7 +4,7 @@ class Santa
 		puts "Initializing Santa instance ..."
 		@gender = gender
 		@ethnicity = ethnicity
-		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+		#@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 		@age = 0
 	end
 	
@@ -16,12 +16,26 @@ class Santa
 		puts "That was a good #{cookie}!"
 	end
 
+	def santa_type
+		puts " Santa is a(n) #{@gender} #{@ethnicity}"
+	end
 	
 end
 
-Nick = Santa.new
+# Nick = Santa.new
 
-Nick.speak
+# Nick.speak
 
-Nick.eat_milk_and_cookies("Oreo")
+# Nick.eat_milk_and_cookies("Oreo")
+
+santas = []
+
+genders = ["male", "female", "agender", "demigender", "gender fluid", "bigender"]
+races = ["hobbit", "orc", "human", "goblin", "dwarf", "elf"]
+
+genders.length.times do |claus|
+	santas << Santa.new(genders[claus], races[claus])
+	puts "Number #{claus+1},"
+	puts "#{santas[claus].santa_type}"
+end
 
