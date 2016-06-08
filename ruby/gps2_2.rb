@@ -28,10 +28,16 @@ def add_item(grocHash, item, quantity=1)
 end 
 # output: updated hash
 p add_item(testList, "fish", 3)
+
 # Method to remove an item from the list
 # input: item name
-# steps: reference item to be deleted and remove from hash
+def delete_item(grocHash, item)
+	# steps: reference item to be deleted and remove from hash
+	grocHash.delete(item.to_sym)
+	grocHash
+end
 # output: updated hash
+p delete_item(testList, "carrots")
 
 # Method to update the quantity of an item
 # input: item name and quantity
