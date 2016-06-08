@@ -17,13 +17,17 @@ def create_list (foodItems)
   foodHash
 end
 # output: hash
-create_list("carrots apples cereal pizza")
+testList = create_list("carrots apples cereal pizza")
 
 # Method to add an item to a list
 # input: item name and optional quantity 
+def add_item(grocHash, item, quantity=1)
 # steps: take new item and new quantity and add to existing hash
+	grocHash[item.to_sym] = quantity 
+	grocHash
+end 
 # output: updated hash
-
+p add_item(testList, "fish", 3)
 # Method to remove an item from the list
 # input: item name
 # steps: reference item to be deleted and remove from hash
