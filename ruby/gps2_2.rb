@@ -1,12 +1,23 @@
 # Method to create a list
+
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
-# steps: 
+def create_list (foodItems)
+	# steps: 
   # run split method on the string to create array
-  # take each item from array and convert to symbol
-  # creat a hash
-  # add the items to the hash and set default quantity
+	foodList = foodItems.split(' ')
+	# create a hash
+	foodHash = {}
+	# add the items to the hash and set default quantity
+  foodList.each do |item|
+  	foodHash[item.to_sym] = 1
+  end
+
   # print the list to the console [can you use one of your other methods here?]
+  p foodHash
+  foodHash
+end
 # output: hash
+create_list("carrots apples cereal pizza")
 
 # Method to add an item to a list
 # input: item name and optional quantity 
