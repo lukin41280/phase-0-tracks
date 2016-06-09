@@ -11,7 +11,7 @@ class Jedi
 	attr_accessor :age, :saber_color
 	
 	def initialize (name, age)
-		puts "The Force is strong with this one..."
+		puts "The Force has created your Jedi..."
 		# create species, planets, and lightsaber colors
 		species = ["Human", "Bothan", "Twi'lek", "Wookie", "Rodian", "Nautolan"]
 		planets = ["Tatooine", "Naboo", "Hoth", "Coruscant", "Bespin", "Endor", "Alderaan"]
@@ -46,8 +46,32 @@ class Jedi
 end
 
 ### Tester code ###
-Luke = Jedi.new("Luke", 23)
-p Luke 
-Luke.force_lift("X-wing")
-Luke.lightsaber_on
-Luke.mind_trick("release the droids and the wookie")
+
+# Luke = Jedi.new("Luke", 23)
+# p Luke 
+# Luke.force_lift("X-wing")
+# Luke.lightsaber_on
+# Luke.mind_trick("release the droids and the wookie")
+
+### User Interface ###
+
+# create a Jedi army
+def jedi_maker
+	# ask how many Jedi they would like to create
+	puts "How many Jedi would you like to create?"
+	jedi_amount = gets.chomp.to_i
+	# create as many jedi as user has provided
+
+	# ask user for name and age
+	puts "Please name your Jedi:"
+	jedi_name = gets.chomp
+	puts "How old is your Jedi?"
+	jedi_age = gets.chomp.to_i
+	# create Jedi with name and age given
+	testJedi = Jedi.new(jedi_name, jedi_age)
+	puts "Would you like to select your Jedi's lightsaber color? y/n"
+	saber_response = gets.chomp
+	# if the user wants to select color, ask them for the color, otherwise do nothing
+	testJedi
+end
+jedi_maker
