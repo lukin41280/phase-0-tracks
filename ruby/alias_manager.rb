@@ -4,11 +4,18 @@ def name_swap (name)
 	# split name into a 2 index array and set new string variable to 
 		# swap the first and second index
 	splitName = name.split(' ')
-	newName = splitName[1] + " " + splitName[0]
+		# need to create an IF statement since when entering "done" on the user 
+			# interface, an error occurs since it is not a 2 itemed array.
+		if splitName.size == 2
+			newName = splitName[1] + " " + splitName[0]
+		else
+		  newName = splitName.join('')
+		end
+		newName
 end
 
 ### tester for name_swap
-	#p name_swap("Bob Vincent")
+	#p name_swap("Bob")
 
 
 ###change vowels to next letter in sequence and keep case specific.  
@@ -89,9 +96,8 @@ nameEntry = ""
 until nameEntry == "done" 
 	puts "Please enter a name, or type #{"'done'"} if completed"
 	nameEntry = gets.chomp
-	#fakeName = alias_name(nameEntry)
-	#puts fakeName
-	agentNames.store(nameEntry, "value") 
+	fakeName = alias_name(nameEntry)
+	agentNames.store(nameEntry, fakeName) 
 end
 
 ### loop through stored names and print out both in a sentence 
