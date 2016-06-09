@@ -11,7 +11,7 @@ class Jedi
 	attr_accessor :age, :saber_color
 	
 	def initialize (name, age)
-		puts "The Force has created your Jedi..."
+		puts "The Force has created your Jedi knight"
 		# create species, planets, and lightsaber colors
 		species = ["Human", "Bothan", "Twi'lek", "Wookie", "Rodian", "Nautolan"]
 		planets = ["Tatooine", "Naboo", "Hoth", "Coruscant", "Bespin", "Endor", "Alderaan"]
@@ -45,6 +45,14 @@ class Jedi
 	
 end
 
+#print the attributes of each Jedi created
+def jedi_printer(arrayOfJedis)
+	arrayOfJedis.each do |jediUnit|
+		puts "#{jediUnit.name}, from #{jediUnit.home_planet}, is a(n) #{jediUnit.age} year old"
+		puts "--#{jediUnit.species} who wields a #{jediUnit.saber_color} lightsaber"
+	end
+end
+
 ### Tester code ###
 
 # Luke = Jedi.new("Luke", 23)
@@ -56,22 +64,33 @@ end
 ### User Interface ###
 
 # create a Jedi army
-def jedi_maker
-	# ask how many Jedi they would like to create
-	puts "How many Jedi would you like to create?"
-	jedi_amount = gets.chomp.to_i
-	# create as many jedi as user has provided
-
+jediArray = []
+# ask how many Jedi they would like to create
+puts "How many Jedi would you like to create?"
+jediAmount = gets.chomp.to_i
+# create as many jedi as user has provided
+jediAmount.times do |jediUnit|
 	# ask user for name and age
 	puts "Please name your Jedi:"
-	jedi_name = gets.chomp
+	jediName = gets.chomp
 	puts "How old is your Jedi?"
-	jedi_age = gets.chomp.to_i
+	jediAge = gets.chomp.to_i
 	# create Jedi with name and age given
-	testJedi = Jedi.new(jedi_name, jedi_age)
+	jediUnit = Jedi.new(jediName, jediAge)
 	puts "Would you like to select your Jedi's lightsaber color? y/n"
-	saber_response = gets.chomp
+	saberResponse = gets.chomp
 	# if the user wants to select color, ask them for the color, otherwise do nothing
-	testJedi
+	if saberResponse == "y"
+		puts "Please enter a color"
+		jediUnit.saber_color = gets.chomp
+	end
+	# add new Jedi to the Jedi army
+	jediArray << jediUnit
+	# inform user that Jedi is complete
+	puts "Jedi completed"
 end
-jedi_maker
+# for each jedi created, print out their attributes
+# see jedi_printer method above
+puts "The #{jediArray.size} Jedi you created are:"
+jedi_printer(jediArray)
+
