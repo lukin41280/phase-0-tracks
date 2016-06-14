@@ -7,13 +7,18 @@
 
 // FUNCTION DEFINITION
 function reverse(word) {
+	var reverseWord = "";
 	for (var i = word.length-1; i >= 0 ; i--) {
-		console.log(word[i]);
+		reverseWord = reverseWord + word[i];
 	}	
+	return reverseWord;
 }
 	
 
 
 
 // DRIVER CODE
-reverse("jason")
+backwards = reverse("JavaScript")
+if (backwards == backwards){
+	console.log(backwards)	
+}
