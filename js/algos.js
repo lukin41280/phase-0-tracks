@@ -1,12 +1,11 @@
-// RELEASE 0
-// PSEUDOCODE
+// RELEASE 0 PSEUDOCODE
 // look at the first word in the array
 // make this the largest word
 // look at the next word in the array
 // if this is larger than what exists, overwrite that word, if not, move on
 // repeat this until the end of the array has been reached
 
-// FUNCTION
+// FUNCTIONS
 function longestPhrase(wordsArray){
 	// create empty string
 	longestWord = "";
@@ -20,6 +19,17 @@ function longestPhrase(wordsArray){
 	return longestWord;
 }
 
+fucntion keyValueMatch(objectOne, objectTwo){
+	// need to compare the items within objectOne with objectTwo
+	// if at least one item is shared in both, they match
+	// otherwise they do not match
+}
+
+
+
+
+// DRIVER CODE
+// longestPhrase:
 myArray = ["long phrase", "longest phrase", "longer phrase"];
 console.log(longestPhrase(myArray));
 otherArray = ["this wont be long", "nor will this", "or this", "but this one will be!!!!"];
