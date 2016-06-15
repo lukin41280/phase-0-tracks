@@ -19,18 +19,36 @@ function longestPhrase(wordsArray){
 	return longestWord;
 }
 
-fucntion keyValueMatch(objectOne, objectTwo){
+function keyValueMatch(objectOne, objectTwo){
 	// need to compare the items within objectOne with objectTwo
-	// if at least one item is shared in both, they match
+	for (var property in objectOne){
+		// first check if a property matches in both objects
+		if (objectTwo.hasOwnProperty(property) == true){
+			// if true, now check the values to be the same
+			if (objectOne[property] == objectTwo[property]){
+				console.log("The prop is "+property+" and value is "+objectOne[property]);
+			} else {
+				console.log("Nothing matches");
+			}
+		
+		// if no matches:
+		} else {
+				console.log("Nothing matches");
+			}
+			
+		
+		//console.log(objectOne[pair]);
 	// otherwise they do not match
+	}
+	
 }
 
-
+keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54});
 
 
 // DRIVER CODE
 // longestPhrase:
-myArray = ["long phrase", "longest phrase", "longer phrase"];
-console.log(longestPhrase(myArray));
-otherArray = ["this wont be long", "nor will this", "or this", "but this one will be!!!!"];
-console.log(longestPhrase(otherArray));
+// myArray = ["long phrase", "longest phrase", "longer phrase"];
+// console.log(longestPhrase(myArray));
+// otherArray = ["this wont be long", "nor will this", "or this", "but this one will be!!!!"];
+// console.log(longestPhrase(otherArray));
