@@ -5,7 +5,9 @@
 // if this is larger than what exists, overwrite that word, if not, move on
 // repeat this until the end of the array has been reached
 
-// FUNCTIONS
+// FUNCTIONS -------------------------------------
+
+// RELEASE 0
 function longestPhrase(wordsArray){
 	// create empty string
 	longestWord = "";
@@ -19,6 +21,7 @@ function longestPhrase(wordsArray){
 	return longestWord;
 }
 
+// RELEASE 1
 function keyValueMatch(objectOne, objectTwo){
 	// set boolean variable to default false and when a match is made, turns to true.
 	// if no matches, variable remains false
@@ -34,16 +37,24 @@ function keyValueMatch(objectOne, objectTwo){
 	return matchChecker;
 }
 
+// RELEASE 2
+function randomTestData(arraySize) {
+	
+	// make words that vary in letter size from 1 to 10
+	// randomly take as many words specified from created words and hold them
+	// provide the held words selected
+}
 
 
-// DRIVER CODE RELEASE 0
-// longestPhrase:
+// DRIVER CODE -----------------------------------
+
+// RELEASE 0
 // myArray = ["long phrase", "longest phrase", "longer phrase"];
 // console.log(longestPhrase(myArray));
 // otherArray = ["this wont be long", "nor will this", "or this", "but this one will be!!!!"];
 // console.log(longestPhrase(otherArray));
 
-// DRIVER CODE RELEASE 1
+// RELEASE 1
 // To get true:
 var trueTest = keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54});
 console.log(trueTest);
