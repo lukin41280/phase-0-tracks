@@ -39,11 +39,17 @@ function keyValueMatch(objectOne, objectTwo){
 
 // RELEASE 2
 function randomTestData(arraySize) {
-	
 	// make words that vary in letter size from 1 to 10
+	var arrayOfWords = ["baseball", "cat", "refrigerator", "lawn", "chair", "finals", "y", "balloon"];
 	// randomly take as many words specified from created words and hold them
+	newArray = [];
+	for ( var i = 0; i < arraySize; i ++) {
+		newArray.push(arrayOfWords[Math.floor(Math.random() * 8)]);
+	}
 	// provide the held words selected
+	return newArray;
 }
+
 
 
 // DRIVER CODE -----------------------------------
@@ -56,8 +62,15 @@ function randomTestData(arraySize) {
 
 // RELEASE 1
 // To get true:
-var trueTest = keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54});
-console.log(trueTest);
-// To get false:
-var falseTest = keyValueMatch({name: "Steven", age: 33}, {name: "Tamir", age: 54});
-console.log(falseTest);
+// var trueTest = keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54});
+// console.log(trueTest);
+// // To get false:
+// var falseTest = keyValueMatch({name: "Steven", age: 33}, {name: "Tamir", age: 54});
+// console.log(falseTest);
+
+// RELEASE 2
+
+var randomArray = (randomTestData(4));
+console.log(randomArray);
+var longWord = longestPhrase(randomArray);
+console.log(longWord);
