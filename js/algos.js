@@ -69,8 +69,11 @@ function randomTestData(arraySize) {
 // console.log(falseTest);
 
 // RELEASE 2
-
-var randomArray = (randomTestData(4));
-console.log(randomArray);
-var longWord = longestPhrase(randomArray);
-console.log(longWord);
+// create 10 instances of random arrays
+for (var counter = 1; counter < 11; counter ++) {
+	var randomArray = randomTestData(5);
+	console.log("Random array number " + counter + ":");
+	console.log(randomArray);
+	var longWord = longestPhrase(randomArray);
+	console.log("Longest word in array is: " + longWord + "\n");
+}
