@@ -57,3 +57,28 @@ sqlite> SELECT * FROM golfers;
 2|John T Box|6|false|1
 4|Sandy Bunker|1|true|3
 5|Dan Bogeys|6|false|4
+
+
+-----RELEASE 3 JOINs------
+
+--- Running multiple conditions.  Display golfers and the course name where the courses are private memberships:
+
+sqlite> SELECT golfers.name, courses.name FROM golfers JOIN courses ON (golfers.course_id = courses.id and courses.private = "true");
+
+John T Box|Green Meadow CC
+Dan Bogeys|Nashua CC 
+
+--- Running the same query with a LEFT JOIN, prints all rows from first table (table listed after FROM) and only the items from the second table that meet conditions:
+
+sqlite> SELECT golfers.name, courses.name FROM golfers LEFT JOIN courses ON (golfers.course_id = courses.id and courses.private = "true");
+
+Lion Forrest|
+John T Box|Green Meadow CC
+Sandy Bunker|
+Dan Bogeys|Nashua CC 
+
+--- A RIGHT JOIN can be run to mirror the LEFT JOIN where the first table is item is blank on when condition is met.  I ran this and got this error:
+
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+--- A FULL JOIN prints every instance where a condition is met, including all the NULL values
