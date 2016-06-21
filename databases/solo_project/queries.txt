@@ -1,0 +1,84 @@
+1) Display the information in one table (either table is fine).
+
+Displaying "golfers" table:
+
+sqlite> SELECT * FROM golfers;
+
+1|Lion Forrest|2|true|2
+2|John T Box|4|false|1
+3|Fair Weigh|7|false|2
+4|Sandy Bunker|1|true|3
+5|Dan Bogeys|6|false|4
+
+2) Update an item that meets some condition (you can choose a condition that makes sense).
+
+Updating "John T Box's" handicap to 6:
+
+sqlite> UPDATE golfers SET handicap=6 WHERE name="John T Box";
+sqlite> SELECT * FROM golfers;
+
+1|Lion Forrest|2|true|2
+2|John T Box|6|false|1
+3|Fair Weigh|7|false|2
+4|Sandy Bunker|1|true|3
+5|Dan Bogeys|6|false|4
+
+
+3) Display the information in both tables using one query.
+
+sqlite> SELECT * FROM golfers, courses WHERE golfers.course_id = courses.id;
+
+1|Lion Forrest|2|true|2|2|Scottish Highlands|71|false
+2|John T Box|6|false|1|1|Green Meadow CC|72|true
+3|Fair Weigh|7|false|2|2|Scottish Highlands|71|false
+4|Sandy Bunker|1|true|3|3|Trull Brook CC|72|false
+5|Dan Bogeys|6|false|4|4|Nashua CC|70|true
+
+4) Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+Display golfer names and if the course they belong to is a private course (true):
+
+sqlite> SELECT golfers.name, courses.private FROM golfers, courses WHERE golfers.course_id = courses.id;
+
+Lion Forrest|false
+John T Box|true
+Fair Weigh|false
+Sandy Bunker|false
+Dan Bogeys|true
+
+5) Delete an item that meets some condition (you can choose a condition that makes sense).
+
+Handicaps of 7 and over are too high and those players are removed from the grouping.  Fair Weigh to be removed:
+
+sqlite> DELETE FROM golfers WHERE handicap > 6;
+sqlite> SELECT * FROM golfers;
+   
+1|Lion Forrest|2|true|2
+2|John T Box|6|false|1
+4|Sandy Bunker|1|true|3
+5|Dan Bogeys|6|false|4
+
+
+-----RELEASE 3 JOINs------
+
+--- Running multiple conditions.  Display golfers and the course name where the courses are private memberships:
+
+sqlite> SELECT golfers.name, courses.name FROM golfers JOIN courses ON (golfers.course_id = courses.id and courses.private = "true");
+
+John T Box|Green Meadow CC
+Dan Bogeys|Nashua CC 
+
+--- Running the same query with a LEFT JOIN, prints all rows from first table (table listed after FROM) and only the items from the second table that meet conditions:
+
+sqlite> SELECT golfers.name, courses.name FROM golfers LEFT JOIN courses ON (golfers.course_id = courses.id and courses.private = "true");
+
+Lion Forrest|
+John T Box|Green Meadow CC
+Sandy Bunker|
+Dan Bogeys|Nashua CC 
+
+--- A RIGHT JOIN can be run to mirror the LEFT JOIN where the first table is item is blank on when condition is met.  I ran this and got this error:
+
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+--- A FULL JOIN prints every instance where a condition is met, including all the NULL values
