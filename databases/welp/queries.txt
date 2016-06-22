@@ -1,0 +1,29 @@
+RELEASE 2
+
+2) - simply add an additional JOIN statement to add in third table:
+
+sqlite> SELECT * FROM reviews JOIN users ON user_id=users.id JOIN businesses ON business_id=businesses.id;
+
+1|3|food was just ok|2|1|1|Bradford|Pitt|2|Amir's Towing
+2|5|wow my socks were blown off|3|2|2|Mandy|Kailing|3|The Beagle Nightclub
+3|1|terrible food|1|3|3|Angela|Jolie|1|Grundy Hollow Wedding Chapel
+4|4|i like food, i like here|3|1|1|Bradford|Pitt|3|The Beagle Nightclub
+5|2|i almost walked out|2|3|3|Angela|Jolie|2|Amir's Towing
+
+
+3)
+
+sqlite> SELECT first_name, last_name, name, stars, comment FROM reviews JOIN users ON user_id=users.id JOIN businesses ON business_id=businesses.id;
+
+Bradford|Pitt|Amir's Towing|3|food was just ok
+Mandy|Kailing|The Beagle Nightclub|5|wow my socks were blown off
+Angela|Jolie|Grundy Hollow Wedding Chapel|1|terrible food
+Bradford|Pitt|The Beagle Nightclub|4|i like food, i like here
+Angela|Jolie|Amir's Towing|2|i almost walked out
+
+4) - add a WHERE statement 
+
+sqlite> SELECT first_name, last_name, name, stars, comment FROM reviews JOIN users ON user_id=users.id JOIN businesses ON business_id=businesses.id WHERE businesses.name = "The Beagle Nightclub";
+
+Mandy|Kailing|The Beagle Nightclub|5|wow my socks were blown off
+Bradford|Pitt|The Beagle Nightclub|4|i like food, i like here
