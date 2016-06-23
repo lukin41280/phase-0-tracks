@@ -10,9 +10,9 @@
 // RELEASE 0
 function longestPhrase(wordsArray){
 	longestWord = "";
-	for (var index in wordsArray){
-		if (wordsArray[index].length > longestWord.length){
-			longestWord = wordsArray[index];
+	for (var i = 0; i < wordsArray.length; i++){
+		if (wordsArray[i].length > longestWord.length){
+			longestWord = wordsArray[i];
 		}
 	}
 	return longestWord;
@@ -52,10 +52,10 @@ function randomTestData(arraySize) {
 // DRIVER CODE -----------------------------------
 
 // RELEASE 0
-// myArray = ["long phrase", "longest phrase", "longer phrase"];
-// console.log(longestPhrase(myArray));
-// otherArray = ["this wont be long", "nor will this", "or this", "but this one will be!!!!"];
-// console.log(longestPhrase(otherArray));
+myArray = ["long phrase", "longest phrase", "longer phrase"];
+console.log(longestPhrase(myArray));
+otherArray = ["this wont be long", "nor will this", "or this", "but this one will be!!!!"];
+console.log(longestPhrase(otherArray));
 
 // RELEASE 1
 // To get true:
@@ -67,10 +67,10 @@ function randomTestData(arraySize) {
 
 // RELEASE 2
 // create 10 instances of random arrays
-for (var counter = 1; counter < 11; counter ++) {
-	var randomArray = randomTestData(5);
-	console.log("Random array number " + counter + ":");
-	console.log(randomArray);
-	var longWord = longestPhrase(randomArray);
-	console.log("Longest word in array is: " + longWord + "\n");
-}
+// for (var counter = 1; counter < 11; counter ++) {
+// 	var randomArray = randomTestData(5);
+// 	console.log("Random array number " + counter + ":");
+// 	console.log(randomArray);
+// 	var longWord = longestPhrase(randomArray);
+// 	console.log("Longest word in array is: " + longWord + "\n");
+// }
