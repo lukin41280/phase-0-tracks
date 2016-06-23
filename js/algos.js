@@ -20,18 +20,13 @@ function longestPhrase(wordsArray){
 
 // RELEASE 1
 function keyValueMatch(objectOne, objectTwo){
-	// set boolean variable to default false and when a match is made, turns to true.
-	// if no matches, variable remains false
-	var matchChecker = false;
 	// need to compare the items within objectOne to objectTwo
-	// go thru the properties in objectOne
-	for (var property in objectOne){
-		// check if the value matches in both objects.  
+	for (var property in objectOne){ 
 		if (objectOne[property] == objectTwo[property]) {
-			matchChecker = true;
-		} 
+			return true;
+		}
 	}
-	return matchChecker;
+	return false;
 }
 
 // RELEASE 2
@@ -52,18 +47,18 @@ function randomTestData(arraySize) {
 // DRIVER CODE -----------------------------------
 
 // RELEASE 0
-myArray = ["long phrase", "longest phrase", "longer phrase"];
-console.log(longestPhrase(myArray));
-otherArray = ["this wont be long", "nor will this", "or this", "but this one will be!!!!"];
-console.log(longestPhrase(otherArray));
+// myArray = ["long phrase", "longest phrase", "longer phrase"];
+// console.log(longestPhrase(myArray));
+// otherArray = ["this wont be long", "nor will this", "or this", "but this one will be!!!!"];
+// console.log(longestPhrase(otherArray));
 
 // RELEASE 1
-// To get true:
-// var trueTest = keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54});
-// console.log(trueTest);
-// // To get false:
-// var falseTest = keyValueMatch({name: "Steven", age: 33}, {name: "Tamir", age: 54});
-// console.log(falseTest);
+//To get true:
+var trueTest = keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54});
+console.log(trueTest);
+// To get false:
+var falseTest = keyValueMatch({name: "Steven", age: 33}, {name: "Tamir", age: 54});
+console.log(falseTest);
 
 // RELEASE 2
 // create 10 instances of random arrays
