@@ -9,10 +9,7 @@
 
 // RELEASE 0
 function longestPhrase(wordsArray){
-	// create empty string
 	longestWord = "";
-	// loop thru each index of the array and check if string is longer than 
-	// longestWord.  If so, place new word in longestWord
 	for (var index in wordsArray){
 		if (wordsArray[index].length > longestWord.length){
 			longestWord = wordsArray[index];
