@@ -31,17 +31,20 @@ function keyValueMatch(objectOne, objectTwo){
 
 // RELEASE 2
 function randomTestData(arraySize) {
-	// make words that vary in letter size from 1 to 10
-	var arrayOfWords = ["baseball", "cat", "refrigerator", "lawn", "chair", "finals", "y", "balloon"];
-	// randomly take as many words specified from created words and hold them
+	// need to generate random words and create array 
+	var letters = "abcdefghijklmnopqrstuvwxyz";
 	newArray = [];
+	// randomly take letters and build random sized words to add to array
 	for ( var i = 0; i < arraySize; i ++) {
-		newArray.push(arrayOfWords[Math.floor(Math.random() * 8)]);
+		var randomWord = "";
+		var wordLength = Math.floor(Math.random() * 11) + 1;	
+			for ( var k = 0; k < wordLength; k++) {
+				randomWord = randomWord + letters.charAt(Math.floor(Math.random() * letters.length));
+			}
+		newArray.push(randomWord);
 	}
-	// provide the held words selected
 	return newArray;
 }
-
 
 
 // DRIVER CODE -----------------------------------
@@ -54,18 +57,18 @@ function randomTestData(arraySize) {
 
 // RELEASE 1
 //To get true:
-var trueTest = keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54});
-console.log(trueTest);
-// To get false:
-var falseTest = keyValueMatch({name: "Steven", age: 33}, {name: "Tamir", age: 54});
-console.log(falseTest);
+// var trueTest = keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54});
+// console.log(trueTest);
+// // To get false:
+// var falseTest = keyValueMatch({name: "Steven", age: 33}, {name: "Tamir", age: 54});
+// console.log(falseTest);
 
 // RELEASE 2
 // create 10 instances of random arrays
-// for (var counter = 1; counter < 11; counter ++) {
-// 	var randomArray = randomTestData(5);
-// 	console.log("Random array number " + counter + ":");
-// 	console.log(randomArray);
-// 	var longWord = longestPhrase(randomArray);
-// 	console.log("Longest word in array is: " + longWord + "\n");
-// }
+for (var counter = 1; counter < 11; counter ++) {
+	var randomArray = randomTestData(5);
+	console.log("Random array number " + counter + ":");
+	console.log(randomArray);
+	var longWord = longestPhrase(randomArray);
+	console.log("Longest word in array is: " + longWord + "\n");
+}
