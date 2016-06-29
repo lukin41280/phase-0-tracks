@@ -44,3 +44,38 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+# RELEASE 0
+# write a GET route for an address
+
+get '/contact' do
+  "Addesss: <br>1234 Main Street<br>Anytown, NH USA"
+end
+
+# write a GET route that takes a
+# persons name as query parameter
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
+
+# write a GET route that uses route
+# parameters to add to numbers
+
+get '/:number_1/plus/:number_2' do
+  sum = params[:number_1].to_i + params[:number_2].to_i
+  "#{params[:number_1]} plus #{params[:number_2]} equals #{sum}"
+end
+
+# RELEASE 1
+
+#1) Other web apps that exist for Ruby are Rails and Apache
+#2) Other options for accessing databases in with Sinatra are DataMapper and ActiveRecord
+#3) Web stacking is the collection of software for web development.  The basic construct of 
+#   software within a stack is: an operating system, database software, programming language, 
+#   and a web server
