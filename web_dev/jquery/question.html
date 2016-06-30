@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A friendly question</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("#cat").click(function(){
+			$("#wrong").css("display", "inline");
+			$("#correct").css("display", "none");
+		});
+		$("#dog").click(function(){
+			$("#correct").css("display", "inline");
+			$("#wrong").css("display", "none");
+		});
+		$("#mouse").click(function(){
+			$("#wrong").css("display", "inline");
+			$("#correct").css("display", "none");
+		});
+		$("#whale").click(function(){
+			$("#wrong").css("display", "inline");
+			$("#correct").css("display", "none");
+		});
+	});
+
+	</script>
+	<style>
+	
+	#wrong {
+		display: none;
+		color: red;
+	}
+	#correct {
+		display: none;
+		color: green;
+	}
+	
+
+	</style>
+</head>
+<body>
+	<h2>Who is man's best friend?</h2>
+	<h4>Click on the correct answer</h4>
+	
+		
+	<p id="cat">a) A cat </p>
+	<p id="dog">b) A dog </p>
+	<p id="mouse">c) A mouse </p>
+	<p id="whale">d) A whale </p>
+	
+
+	<h4 id="answer">ANSWER</h4>
+
+	<div id="correct">That is correct!</div>
+	<div id="wrong">Sorry.  Try again...</div>
+
+</body>
+</html>
