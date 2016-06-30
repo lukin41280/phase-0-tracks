@@ -25,3 +25,17 @@ post '/students' do
 end
 
 # add static resources
+get '/students/about' do
+	erb :pairing
+end
+
+get '/students/about/future_locations' do
+	@futures = db.execute("SELECT * FROM futures")
+	erb :future_locations
+end
+
+post '/student' do
+	db.execute("CREATE TABLE IF NOT EXISTS futures (future_loc VARCHAR(255))")
+	db.execute("INSERT INTO futures (future_loc) VALUES (?)", [params['future_loc']])
+	redirect '/students/about/future_locations'
+end

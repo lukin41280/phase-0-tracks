@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Future Locations</title>
+</head>
+<body>
+<h1>Here are the locations that others have suggested:</h1>
+<ul>
+<% @futures.each do |city| %>
+      <li><%= city['future_loc'] %></li>
+    <% end %>
+</ul>
+<p>Click <a href="/">here</a> to return to the home page.</p>
+</body>
+</html>
