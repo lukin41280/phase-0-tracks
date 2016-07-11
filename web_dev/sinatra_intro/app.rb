@@ -72,6 +72,15 @@ get '/:number_1/plus/:number_2' do
   "#{params[:number_1]} plus #{params[:number_2]} equals #{sum}"
 end
 
+
+# route parameter matches to any part of a name: first, last, title etc
+get '/search/:name_search' do
+  name_search = params[:name_search]
+  
+  result = db.execute("SELECT * FROM students WHERE name LIKE '#{params[:name_search]}%'")
+  result.to_s
+end
+
 # RELEASE 1
 
 #1) Other web apps that exist for Ruby are Rails and Apache
@@ -79,3 +88,4 @@ end
 #3) Web stacking is the collection of software for web development.  The basic construct of 
 #   software within a stack is: an operating system, database software, programming language, 
 #   and a web server
+
